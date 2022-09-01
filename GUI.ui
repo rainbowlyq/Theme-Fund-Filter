@@ -1,0 +1,1598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1080</width>
+    <height>560</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1080</width>
+    <height>560</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>主题基金筛选</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  border-style: none;
+  border-image: none;
+  outline: 0;
+}
+QToolBar * {
+  margin: 0px;
+  padding: 0px;
+}
+QWidget {
+  background-color: #FAFAFA;
+  border: 0px solid #C9CDD0;
+  padding: 0px;
+  color: #19232D;
+  selection-background-color: #9FCBFF;
+  selection-color: #19232D;
+}
+
+QWidget:disabled {
+  background-color: #FAFAFA;
+  color: #788D9C;
+  selection-background-color: #DAEDFF;
+  selection-color: #788D9C;
+}
+
+QWidget::item:selected {
+  background-color: #9FCBFF;
+}
+
+QWidget::item:hover:!selected {
+  background-color: #73C7FF;
+}
+QMainWindow::separator {
+  background-color: #C9CDD0;
+  border: 0px solid #FAFAFA;
+  spacing: 0px;
+  padding: 2px;
+}
+
+QMainWindow::separator:hover {
+  background-color: #ACB1B6;
+  border: 0px solid #73C7FF;
+}
+
+QMainWindow::separator:horizontal {
+  width: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+QMainWindow::separator:vertical {
+  height: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+QPushButton {
+  background-color: #C9CDD0;
+  color: #19232D;
+  border-radius: 4px;
+  padding: 2px;
+  outline: none;
+  border: none;
+}
+QPushButton:disabled {
+  background-color: #C9CDD0;
+  color: #788D9C;
+  border-radius: 4px;
+  padding: 2px;
+}
+QPushButton:checked {
+  background-color: #ACB1B6;
+  border-radius: 4px;
+  padding: 2px;
+  outline: none;
+}
+
+QPushButton:checked:disabled {
+  background-color: #ACB1B6;
+  color: #788D9C;
+  border-radius: 4px;
+  padding: 2px;
+  outline: none;
+}
+
+QPushButton:checked:selected {
+  background: #ACB1B6;
+}
+
+QPushButton:hover {
+  background-color: #B9BDC1;
+  color: #19232D;
+}
+
+QPushButton:pressed {
+  background-color: #ACB1B6;
+}
+
+QPushButton:selected {
+  background: #ACB1B6;
+  color: #19232D;
+}
+
+QPushButton::menu-indicator {
+  subcontrol-origin: padding;
+  subcontrol-position: bottom right;
+  bottom: 4px;
+}
+
+QDialogButtonBox QPushButton {
+  /* Issue #194 #248 - Special case of QPushButton inside dialogs, for better UI */
+  min-width: 80px;
+}
+QTextEdit {
+  background-color: #FAFAFA;
+  color: #19232D;
+  border-radius: 4px;
+  border: 1px solid #C9CDD0;
+}
+
+QTextEdit:focus {
+  border: 1px solid #73C7FF;
+}
+
+QTextEdit:selected {
+  background: #9FCBFF;
+  color: #C9CDD0;
+}
+QPlainTextEdit {
+  background-color: #FAFAFA;
+  color: #19232D;
+  border-radius: 4px;
+  border: 1px solid #C9CDD0;
+}
+
+QPlainTextEdit:focus {
+  border: 1px solid #73C7FF;
+}
+
+QPlainTextEdit:selected {
+  background: #9FCBFF;
+  color: #C9CDD0;
+}
+QLabel {
+  background-color: #FAFAFA;
+  border: 0px solid #C9CDD0;
+  padding: 2px;
+  margin: 0px;
+  color: #19232D;
+}
+
+QLabel:disabled {
+  background-color: #FAFAFA;
+  border: 0px solid #C9CDD0;
+  color: #788D9C;
+}
+QRadioButton {
+  background-color: #FAFAFA;
+  color: #19232D;
+  spacing: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border: none;
+  outline: none;
+}
+
+QRadioButton:focus {
+  border: none;
+}
+
+QRadioButton:disabled {
+  background-color: #FAFAFA;
+  color: #788D9C;
+  border: none;
+  outline: none;
+}
+
+QRadioButton QWidget {
+  background-color: #FAFAFA;
+  color: #19232D;
+  spacing: 0px;
+  padding: 0px;
+  outline: none;
+  border: none;
+}
+
+
+QMenuBar {
+  background-color: #C9CDD0;
+  padding: 2px;
+  border: 1px solid #FAFAFA;
+  color: #19232D;
+  selection-background-color: #73C7FF;
+}
+
+QMenuBar:focus {
+  border: 1px solid #9FCBFF;
+}
+
+QMenuBar::item {
+  background: transparent;
+  padding: 4px;
+}
+
+QMenuBar::item:selected {
+  padding: 4px;
+  background: transparent;
+  border: 0px solid #C9CDD0;
+  background-color: #73C7FF;
+}
+
+QMenuBar::item:pressed {
+  padding: 4px;
+  border: 0px solid #C9CDD0;
+  background-color: #73C7FF;
+  color: #19232D;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+QMenu {
+  border: 0px solid #C9CDD0;
+  color: #19232D;
+  margin: 0px;
+  background-color: #CED1D4;
+  selection-background-color: #73C7FF;
+}
+
+QMenu::separator {
+  height: 1px;
+  background-color: #ACB1B6;
+  color: #19232D;
+}
+
+QMenu::item {
+  background-color: #CED1D4;
+  padding: 4px 24px 4px 28px;
+  /* Reserve space for selection border */
+  border: 1px transparent #C9CDD0;
+}
+
+QMenu::item:selected {
+  color: #19232D;
+  background-color: #73C7FF;
+}
+
+QMenu::item:pressed {
+  background-color: #73C7FF;
+}
+
+QMenu::icon {
+  padding-left: 10px;
+  width: 14px;
+  height: 14px;
+}
+
+QMenu::indicator {
+  padding-left: 8px;
+  width: 12px;
+  height: 12px;
+  /* non-exclusive indicator = check box style indicator (see QActionGroup::setExclusive) */
+  /* exclusive indicator = radio button style indicator (see QActionGroup::setExclusive) */
+}
+QAbstractItemView {
+  alternate-background-color: #FAFAFA;
+  color: #19232D;
+  border: 1px solid #C9CDD0;
+  border-radius: 4px;
+}
+QScrollBar:horizontal {
+  height: 16px;
+  margin: 2px 16px 2px 16px;
+  border: 1px solid #C9CDD0;
+  border-radius: 4px;
+  background-color: #FAFAFA;
+}
+
+QScrollBar:vertical {
+  background-color: #FAFAFA;
+  width: 16px;
+  margin: 16px 2px 16px 2px;
+  border: 1px solid #C9CDD0;
+  border-radius: 4px;
+}
+
+QScrollBar::handle:horizontal {
+  background-color: #ACB1B6;
+  border: 1px solid #C9CDD0;
+  border-radius: 4px;
+  min-width: 8px;
+}
+
+QScrollBar::handle:horizontal:hover {
+  background-color: #9FCBFF;
+  border: #9FCBFF;
+  border-radius: 4px;
+  min-width: 8px;
+}
+
+QScrollBar::handle:horizontal:focus {
+  border: 1px solid #73C7FF;
+}
+
+QScrollBar::handle:vertical {
+  background-color: #ACB1B6;
+  border: 1px solid #C9CDD0;
+  min-height: 8px;
+  border-radius: 4px;
+}
+
+QScrollBar::handle:vertical:hover {
+  background-color: #9FCBFF;
+  border: #9FCBFF;
+  border-radius: 4px;
+  min-height: 8px;
+}
+
+QScrollBar::handle:vertical:focus {
+  border: 1px solid #73C7FF;
+}
+QToolBar {
+  background-color: #C9CDD0;
+  border-bottom: 1px solid #FAFAFA;
+  padding: 1px;
+  font-weight: bold;
+  spacing: 2px;
+}
+
+QToolBar:disabled {
+  /* Fixes #272 */
+  background-color: #C9CDD0;
+}
+QTextBrowser {
+  background-color: #FAFAFA;
+  border: 1px solid #C9CDD0;
+  color: #19232D;
+  border-radius: 4px;
+}
+
+QTextBrowser:disabled {
+  background-color: #FAFAFA;
+  border: 1px solid #C9CDD0;
+  color: #788D9C;
+  border-radius: 4px;
+}
+
+QTextBrowser:hover, QTextBrowser:!hover, QTextBrowser:selected, QTextBrowser:pressed {
+  border: 1px solid #C9CDD0;
+}
+QGraphicsView {
+  background-color: #FAFAFA;
+  border: 1px solid #C9CDD0;
+  color: #19232D;
+  border-radius: 4px;
+}
+
+QGraphicsView:disabled {
+  background-color: #FAFAFA;
+  border: 1px solid #C9CDD0;
+  color: #788D9C;
+  border-radius: 4px;
+}
+
+QGraphicsView:hover, QGraphicsView:!hover, QGraphicsView:selected, QGraphicsView:pressed {
+  border: 1px solid #C9CDD0;
+}
+QCalendarWidget {
+  border: 1px solid #C9CDD0;
+  border-radius: 4px;
+}
+
+QCalendarWidget:disabled {
+  background-color: #FAFAFA;
+  color: #788D9C;
+}
+QLCDNumber {
+  background-color: #FAFAFA;
+  color: #19232D;
+}
+
+QLCDNumber:disabled {
+  background-color: #FAFAFA;
+  color: #788D9C;
+}
+QProgressBar {
+  background-color: #FAFAFA;
+  border: 1px solid #C9CDD0;
+  color: #19232D;
+  border-radius: 4px;
+  text-align: center;
+}
+
+QProgressBar:disabled {
+  background-color: #FAFAFA;
+  border: 1px solid #C9CDD0;
+  color: #788D9C;
+  border-radius: 4px;
+  text-align: center;
+}
+
+QProgressBar::chunk {
+  background-color: #9FCBFF;
+  color: #FAFAFA;
+  border-radius: 4px;
+}
+
+QProgressBar::chunk:disabled {
+  background-color: #DAEDFF;
+  color: #788D9C;
+  border-radius: 4px;
+}
+QToolButton {
+  background-color: #C9CDD0;
+  color: #19232D;
+  border-radius: 4px;
+  padding: 2px;
+  outline: none;
+  border: none;
+  /* The subcontrols below are used only in the DelayedPopup mode */
+  /* The subcontrols below are used only in the MenuButtonPopup mode */
+  /* The subcontrol below is used only in the InstantPopup or DelayedPopup mode */
+}
+
+QToolButton:disabled {
+  background-color: #C9CDD0;
+  color: #788D9C;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QToolButton:checked {
+  background-color: #ACB1B6;
+  border-radius: 4px;
+  padding: 2px;
+  outline: none;
+}
+
+QToolButton:checked:disabled {
+  background-color: #ACB1B6;
+  color: #788D9C;
+  border-radius: 4px;
+  padding: 2px;
+  outline: none;
+}
+
+QToolButton:checked:hover {
+  background-color: #B9BDC1;
+  color: #19232D;
+}
+
+QToolButton:checked:pressed {
+  background-color: #ACB1B6;
+}
+
+QToolButton:checked:selected {
+  background: #ACB1B6;
+  color: #19232D;
+}
+
+QToolButton:hover {
+  background-color: #B9BDC1;
+  color: #19232D;
+}
+
+QToolButton:pressed {
+  background-color: #ACB1B6;
+}
+
+QToolButton:selected {
+  background: #ACB1B6;
+  color: #19232D;
+}
+
+QToolButton[popupMode=&quot;0&quot;] {
+  /* Only for DelayedPopup */
+  padding-right: 2px;
+}
+
+QToolButton[popupMode=&quot;1&quot;] {
+  /* Only for MenuButtonPopup */
+  padding-right: 20px;
+}
+
+QToolButton[popupMode=&quot;1&quot;]::menu-button {
+  border: none;
+}
+
+QToolButton[popupMode=&quot;1&quot;]::menu-button:hover {
+  border: none;
+  border-left: 1px solid #C9CDD0;
+  border-radius: 0;
+}
+
+QToolButton[popupMode=&quot;2&quot;] {
+  /* Only for InstantPopup */
+  padding-right: 2px;
+}
+
+QToolButton::menu-button {
+  padding: 2px;
+  border-radius: 4px;
+  width: 12px;
+  border: none;
+  outline: none;
+}
+
+QToolButton::menu-button:hover {
+  border: 1px solid #9FCBFF;
+}
+
+QToolButton::menu-button:checked:hover {
+  border: 1px solid #9FCBFF;
+}
+QCommandLinkButton {
+  background-color: transparent;
+  border: 1px solid #C9CDD0;
+  color: #19232D;
+  border-radius: 4px;
+  padding: 0px;
+  margin: 0px;
+}
+
+QCommandLinkButton:disabled {
+  background-color: transparent;
+  color: #788D9C;
+}
+QComboBox {
+  border: 1px solid #C9CDD0;
+  border-radius: 4px;
+  selection-background-color: #9FCBFF;
+  padding-left: 4px;
+  padding-right: 4px;
+  /* padding-right = 36; 4 + 16*2 See scrollbar size */
+  /* changed to 4px to fix #239 */
+  /* Fixes #103, #111 */
+  min-height: 1.5em;
+  /* padding-top: 2px;     removed to fix #132 */
+  /* padding-bottom: 2px;  removed to fix #132 */
+  /* min-width: 75px;      removed to fix #109 */
+  /* Needed to remove indicator - fix #132 */
+}
+
+QComboBox QAbstractItemView {
+  border: 1px solid #C9CDD0;
+  border-radius: 0;
+  background-color: #FAFAFA;
+  selection-background-color: #9FCBFF;
+}
+
+QComboBox QAbstractItemView:hover {
+  background-color: #FAFAFA;
+  color: #19232D;
+}
+
+QComboBox QAbstractItemView:selected {
+  background: #9FCBFF;
+  color: #C9CDD0;
+}
+
+QComboBox QAbstractItemView:alternate {
+  background: #FAFAFA;
+}
+
+QComboBox:disabled {
+  background-color: #FAFAFA;
+  color: #788D9C;
+}
+
+QComboBox:hover {
+  border: 1px solid #9FCBFF;
+}
+
+QComboBox:focus {
+  border: 1px solid #73C7FF;
+}
+
+QComboBox:on {
+  selection-background-color: #9FCBFF;
+}
+
+QComboBox::indicator {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  selection-background-color: transparent;
+  color: transparent;
+  selection-color: transparent;
+  /* Needed to remove indicator - fix #132 */
+}
+
+QComboBox::indicator:alternate {
+  background: #FAFAFA;
+}
+
+QComboBox::item {
+  /* Remove to fix #282, #285 and MR #288*/
+  /*&amp;:checked {
+            font-weight: bold;
+        }
+
+        &amp;:selected {
+            border: 0px solid transparent;
+        }
+        */
+}
+
+QComboBox::item:alternate {
+  background: #FAFAFA;
+}
+
+QComboBox::drop-down {
+  subcontrol-origin: padding;
+  subcontrol-position: top right;
+  width: 12px;
+  border-left: 1px solid #C9CDD0;
+}
+QSlider:disabled {
+  background: #FAFAFA;
+}
+
+QSlider:focus {
+  border: none;
+}
+
+QSlider::groove:horizontal {
+  background: #C9CDD0;
+  border: 1px solid #C9CDD0;
+  height: 4px;
+  margin: 0px;
+  border-radius: 4px;
+}
+
+QSlider::groove:vertical {
+  background: #C9CDD0;
+  border: 1px solid #C9CDD0;
+  width: 4px;
+  margin: 0px;
+  border-radius: 4px;
+}
+
+QSlider::add-page:vertical {
+  background: #9FCBFF;
+  border: 1px solid #C9CDD0;
+  width: 4px;
+  margin: 0px;
+  border-radius: 4px;
+}
+
+QSlider::add-page:vertical :disabled {
+  background: #DAEDFF;
+}
+
+QSlider::sub-page:horizontal {
+  background: #9FCBFF;
+  border: 1px solid #C9CDD0;
+  height: 4px;
+  margin: 0px;
+  border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal:disabled {
+  background: #DAEDFF;
+}
+
+QSlider::handle:horizontal {
+  background: #788D9C;
+  border: 1px solid #C9CDD0;
+  width: 8px;
+  height: 8px;
+  margin: -8px 0px;
+  border-radius: 4px;
+}
+
+QSlider::handle:horizontal:hover {
+  background: #9FCBFF;
+  border: 1px solid #9FCBFF;
+}
+
+QSlider::handle:horizontal:focus {
+  border: 1px solid #73C7FF;
+}
+
+QSlider::handle:vertical {
+  background: #788D9C;
+  border: 1px solid #C9CDD0;
+  width: 8px;
+  height: 8px;
+  margin: 0 -8px;
+  border-radius: 4px;
+}
+
+QSlider::handle:vertical:hover {
+  background: #9FCBFF;
+  border: 1px solid #9FCBFF;
+}
+
+QSlider::handle:vertical:focus {
+  border: 1px solid #73C7FF;
+}
+QLineEdit {
+  background-color: #FAFAFA;
+  padding-top: 2px;
+  /* This QLineEdit fix  103, 111 */
+  padding-bottom: 2px;
+  /* This QLineEdit fix  103, 111 */
+  padding-left: 4px;
+  padding-right: 4px;
+  border-style: solid;
+  border: 1px solid #C9CDD0;
+  border-radius: 4px;
+  color: #19232D;
+}
+
+QLineEdit:disabled {
+  background-color: #FAFAFA;
+  color: #788D9C;
+}
+
+QLineEdit:hover {
+  border: 1px solid #9FCBFF;
+  color: #19232D;
+}
+
+QLineEdit:focus {
+  border: 1px solid #73C7FF;
+}
+
+QLineEdit:selected {
+  background-color: #9FCBFF;
+  color: #C9CDD0;
+}
+QTabWidget {
+  padding: 2px;
+  selection-background-color: #C9CDD0;
+}
+
+QTabWidget QWidget {
+  /* Fixes #189 */
+  border-radius: 4px;
+}
+
+QTabWidget::pane {
+  border: 1px solid #C9CDD0;
+  border-radius: 4px;
+  margin: 0px;
+  /* Fixes double border inside pane with pyqt5 */
+  padding: 0px;
+}
+
+QTabWidget::pane:selected {
+  background-color: #C9CDD0;
+  border: 1px solid #9FCBFF;
+}
+QTabBar, QDockWidget QTabBar {
+  qproperty-drawBase: 0;
+  border-radius: 4px;
+  margin: 0px;
+  padding: 2px;
+  border: 0;
+  /* left: 5px; move to the right by 5px - removed for fix */
+}
+QTabBar::tab:top:selected:disabled, QDockWidget QTabBar::tab:top:selected:disabled {
+  border-bottom: 3px solid #DAEDFF;
+  color: #788D9C;
+  background-color: #C9CDD0;
+}
+
+QTabBar::tab:bottom:selected:disabled, QDockWidget QTabBar::tab:bottom:selected:disabled {
+  border-top: 3px solid #DAEDFF;
+  color: #788D9C;
+  background-color: #C9CDD0;
+}
+
+QTabBar::tab:left:selected:disabled, QDockWidget QTabBar::tab:left:selected:disabled {
+  border-right: 3px solid #DAEDFF;
+  color: #788D9C;
+  background-color: #C9CDD0;
+}
+
+QTabBar::tab:right:selected:disabled, QDockWidget QTabBar::tab:right:selected:disabled {
+  border-left: 3px solid #DAEDFF;
+  color: #788D9C;
+  background-color: #C9CDD0;
+}
+
+QTabBar::tab:top:!selected:disabled, QDockWidget QTabBar::tab:top:!selected:disabled {
+  border-bottom: 3px solid #FAFAFA;
+  color: #788D9C;
+  background-color: #FAFAFA;
+}
+
+QTabBar::tab:bottom:!selected:disabled, QDockWidget QTabBar::tab:bottom:!selected:disabled {
+  border-top: 3px solid #FAFAFA;
+  color: #788D9C;
+  background-color: #FAFAFA;
+}
+
+QTabBar::tab:left:!selected:disabled, QDockWidget QTabBar::tab:left:!selected:disabled {
+  border-right: 3px solid #FAFAFA;
+  color: #788D9C;
+  background-color: #FAFAFA;
+}
+
+QTabBar::tab:right:!selected:disabled, QDockWidget QTabBar::tab:right:!selected:disabled {
+  border-left: 3px solid #FAFAFA;
+  color: #788D9C;
+  background-color: #FAFAFA;
+}
+
+QTabBar::tab:top:!selected, QDockWidget QTabBar::tab:top:!selected {
+  border-bottom: 2px solid #FAFAFA;
+  margin-top: 2px;
+}
+
+QTabBar::tab:bottom:!selected, QDockWidget QTabBar::tab:bottom:!selected {
+  border-top: 2px solid #FAFAFA;
+  margin-bottom: 2px;
+}
+
+QTabBar::tab:left:!selected, QDockWidget QTabBar::tab:left:!selected {
+  border-left: 2px solid #FAFAFA;
+  margin-right: 2px;
+}
+
+QTabBar::tab:right:!selected, QDockWidget QTabBar::tab:right:!selected {
+  border-right: 2px solid #FAFAFA;
+  margin-left: 2px;
+}
+
+QTabBar::tab:top, QDockWidget QTabBar::tab:top {
+  background-color: #C9CDD0;
+  margin-left: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  min-width: 5px;
+  border-bottom: 3px solid #C9CDD0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+QTabBar::tab:top:selected, QDockWidget QTabBar::tab:top:selected {
+  background-color: #B9BDC1;
+  border-bottom: 3px solid #37AEFE;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+QTabBar::tab:top:!selected:hover, QDockWidget QTabBar::tab:top:!selected:hover {
+  border: 1px solid #73C7FF;
+  border-bottom: 3px solid #73C7FF;
+  /* Fixes spyder-ide/spyder#9766 and #243 */
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+QTabBar::tab:bottom, QDockWidget QTabBar::tab:bottom {
+  border-top: 3px solid #C9CDD0;
+  background-color: #C9CDD0;
+  margin-left: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  min-width: 5px;
+}
+
+QTabBar::tab:bottom:selected, QDockWidget QTabBar::tab:bottom:selected {
+  background-color: #B9BDC1;
+  border-top: 3px solid #37AEFE;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+QTabBar::tab:bottom:!selected:hover, QDockWidget QTabBar::tab:bottom:!selected:hover {
+  border: 1px solid #73C7FF;
+  border-top: 3px solid #73C7FF;
+  /* Fixes spyder-ide/spyder#9766 and #243 */
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+QTabBar::tab:left, QDockWidget QTabBar::tab:left {
+  background-color: #C9CDD0;
+  margin-top: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  min-height: 5px;
+}
+
+QTabBar::tab:left:selected, QDockWidget QTabBar::tab:left:selected {
+  background-color: #B9BDC1;
+  border-right: 3px solid #37AEFE;
+}
+
+QTabBar::tab:left:!selected:hover, QDockWidget QTabBar::tab:left:!selected:hover {
+  border: 1px solid #73C7FF;
+  border-right: 3px solid #73C7FF;
+  /* Fixes different behavior #271 */
+  margin-right: 0px;
+  padding-right: -1px;
+}
+
+QTabBar::tab:right, QDockWidget QTabBar::tab:right {
+  background-color: #C9CDD0;
+  margin-top: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  min-height: 5px;
+}
+
+QTabBar::tab:right:selected, QDockWidget QTabBar::tab:right:selected {
+  background-color: #B9BDC1;
+  border-left: 3px solid #37AEFE;
+}
+
+QTabBar::tab:right:!selected:hover, QDockWidget QTabBar::tab:right:!selected:hover {
+  border: 1px solid #73C7FF;
+  border-left: 3px solid #73C7FF;
+  /* Fixes different behavior #271 */
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+QTabBar QToolButton, QDockWidget QTabBar QToolButton {
+  /* Fixes #136 */
+  background-color: #C9CDD0;
+  height: 12px;
+  width: 12px;
+}
+
+QTabBar QToolButton:pressed, QDockWidget QTabBar QToolButton:pressed {
+  background-color: #C9CDD0;
+}
+QGroupBox {
+  font-weight: bold;
+  border: 1px solid #C9CDD0;
+  border-radius: 4px;
+  padding: 2px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  left: 4px;
+  padding-left: 2px;
+  padding-right: 4px;
+  padding-top: 1px;
+}
+QGroupBox::indicator {
+  margin-left: 2px;
+  margin-top: 2px;
+  padding: 0;
+  height: 14px;
+  width: 14px;
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adelle Sans Cnd</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>*主题名称</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>371</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>指数Wind代码（用逗号分割）</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>e.g.碳中和</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>371</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QRadioButton" name="radioButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>指数生成股票池</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_2">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>10</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>自定义股票池</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>371</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>e.g.931755.CSI,000913.SH</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adelle Sans Cnd</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>*最新季末日期</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>50</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>格式：yyyymmdd（e.g.20220630）</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>240</y>
+      <width>371</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>编辑自定义股票池模版</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>290</y>
+      <width>371</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>多指数行业分布设置（仅支持指数生成股票池）</string>
+    </property>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>351</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>行业分类（仅可用于“多指数行业分布”）</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>341</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QRadioButton" name="radioButton_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>中信一级</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton_4">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>10</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>新申万一级</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Wind一级</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton_6">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>40</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Wind二级</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>医药行业展开二级（仅中信一级有效）</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>351</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>仅生成多指数行业分布表</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>10</y>
+      <width>651</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>主题基金筛选设置</string>
+    </property>
+    <widget class="QPlainTextEdit" name="plainTextEdit_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>611</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>e.g.三年主动，一年半标准指数，一年半增强指数，次新基金</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>611</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adelle Sans Cnd</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>*基金筛选方案名称（需要提前在Wind设置，用逗号分割）</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>初筛阈值</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="plainTextEdit_6">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>130</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="plainText">
+      <string>40</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_3">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>170</y>
+       <width>331</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>仅初筛，不复筛（建议计算次新基金时勾选）</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>210</y>
+       <width>611</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>复筛条件</string>
+     </property>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>40</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>个季度，基金的主题股覆盖率高于</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>40</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>%</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit_7">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>40</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="plainText">
+       <string>4</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>21</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>近</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit_9">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>40</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="plainText">
+       <string>50</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit_8">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>40</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="plainText">
+       <string>3</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>40</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>季度中至少存在</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>581</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QRadioButton" name="radioButton_11">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>10</y>
+         <width>231</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>保留全部初筛结果</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_12">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>251</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>仅保留符合上述复筛条件的基金</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>需要计算的季度数量</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit_5">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>160</y>
+        <width>381</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="plainText">
+       <string>12</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_4">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>170</y>
+       <width>281</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>删除原有结果（修改阈值后需要勾选）</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>130</y>
+       <width>481</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>%（仅筛选最新季度主题股覆盖率大于该阈值的基金进行后续计算）</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>460</y>
+      <width>651</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>全部运行</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>35</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
